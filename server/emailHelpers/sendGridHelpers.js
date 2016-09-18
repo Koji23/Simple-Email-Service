@@ -6,7 +6,7 @@ const sg = require('sendgrid')(environment.SENDGRID_API_KEY);
 
 module.exports.sendMail = (req, res, next) => {
   let from_email = new helper.Email('jordanchong23@gmail.com');
-  let to_email = new helper.Email('jordanchong23@gmail.com');
+  let to_email = new helper.Email('');
   let subject = "3-Hello World from the SendGrid Node.js Library!";
   let content = new helper.Content('text/plain', "Hello, Email!");
   let mail = new helper.Mail(from_email, subject, to_email, content);
@@ -17,8 +17,8 @@ module.exports.sendMail = (req, res, next) => {
   });
   sg.API(request, function(error, response) {
     if(error) {
-      // attempt with secondary provider in error case
       console.log(error);
+      // attempt with secondary provider in error case
       mailGunHelpers.sendMail(req, res, next);
     } else {
       res.json(response);

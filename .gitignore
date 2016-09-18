@@ -1,0 +1,3 @@
+node_modules
+server/environment/developement.js
+npm-debug.log
