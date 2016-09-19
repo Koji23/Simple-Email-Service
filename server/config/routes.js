@@ -3,7 +3,7 @@ let mailGunHelpers = require('../emailHelpers/mailGunHelpers.js');
 
 module.exports = function(app, io) {
   // API Routes
-  app.post('/', (req, res, next) => {
+  app.get('/', (req, res, next) => {
     res.send('Simple Email Service');
   });
   // socket events 
