@@ -4,9 +4,11 @@ const routes = require('./config/routes.js');
 const environment = require('./environment/developement.js');
 
 const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 middleware(app);
-routes(app);
+routes(app, io);
 
-app.listen(environment.port, console.log("Listening on port", environment.port));
+server.listen(environment.port, console.log("Listening on port", environment.port));
 module.exports = app;
