@@ -6,8 +6,8 @@ let mailGunHelpers = require('../server/emailHelpers/mailGunHelpers.js');
 describe('email helper functions', function() {
   before(function() {
     global.dummyData = {
-      from_email: 'jordanchong23@gmail.com',
-      to_email: 'jordanchong23@gmail.com',
+      from_email: 'testAddress@gmail.com',
+      to_email: 'testAddress@gmail.com',
       subject: 'Hello World',
       body: "Testing email service"
     }
