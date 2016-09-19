@@ -2,10 +2,6 @@ var sendGridHelpers = require('../emailHelpers/sendGridHelpers.js');
 let mailGunHelpers = require('../emailHelpers/mailGunHelpers.js');
 
 module.exports = function(app, io) {
-  // API Routes
-  app.post('/send', (req, res, next) => {
-    sendGridHelpers.sendMail(req, res, next);
-  });
   // socket events 
   io.on('connection', function(socket) {
     console.log('Connection ESTABLISHED!');
